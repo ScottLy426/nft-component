@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+
+  --divider: hsl(215, 32%, 27%);
+
+  --white: hsl(0, 0%, 100%);
+
+  --fs-p: 1.125rem;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+
+  --ff: "Outfit", sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+body {
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--main-bg);
+  font-family: var(--ff);
+}
+
+img {
+  max-width: 100%;
+}
+
+.card-container {
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background-color: var(--card-bg);
+  text-align: left;
+  font-size: var(--fs-p);
+  color: var(--soft-blue);
+  width: 18.75rem;
+}
+
+.card-container :not(:first-child):not(:last-child) {
+  margin-top: 1.25rem;
+}
+
+img[class~="equil"] {
+  border-radius: 10px;
+  display: block;
+}
+
+.header {
+  color: var(--white);
+  font-weight: var(--fw-regular);
+}
+
+.description {
+  font-weight: var(--fw-light);
+}
+
+.price-and-time {
+  justify-content: space-between;
+}
+
+.price-and-time div:first-of-type span {
+  color: var(--cyan);
+}
+.price-and-time div span {
+  margin-left: 5px;
+}
+.divider {
+  background-color: var(--divider);
+  width: 100%;
+  height: 1px;
+}
+
+.user {
+  margin-top: 0.9375rem;
+  margin-bottom: 1.125rem;
+  font-weight: var(--fw-light);
+  font-size: 1rem;
+}
+
+img[class~="avatar"] {
+  width: 2em;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.name span:first-child {
+  margin-left: 15px;
+}
+
+.name span:last-child {
+  color: var(--white);
+}
+
+.img-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--cyan);
+  border-radius: 10px;
+  opacity: 0;
+}
+.view {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-container:hover .overlay {
+  opacity: 0.55;
+}
+
+.img-container:hover div img:last-child {
+  opacity: 1;
+}
+
+.header:hover,
+.name span:last-child:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
